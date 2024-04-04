@@ -40,6 +40,9 @@ public class Persona implements Comparable<Persona> {
         return nif;
     }
 
+    /**
+     * @param nif clave primaria de la persona
+     */
     public void setNif(Nif nif) {
         this.nif = nif;
     }

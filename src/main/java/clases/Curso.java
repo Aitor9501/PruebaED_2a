@@ -27,7 +27,7 @@ public class Curso {
     @Override
     public String toString() {
         String s = "--------------------" + nombre + "-----------------\n";
-        s += "NumExp\tNIF\t\tNombre\t\tApellidos\n";
+        s += "NumExp\tNIF\t\tNombre\tedad\tApellidos\n";
         s += "-------------------------------------------------\n";
         for (Persona listaAlumno : listaAlumnos) {
             s += listaAlumno + "\n";
@@ -35,6 +35,11 @@ public class Curso {
         return s;
     }
 
+    /**
+     * Añade un alumno a la lista
+     * @author Aitor
+     * @param p Recibe objeto persona
+     */
     public void aniadirAlumno(Persona p) {
         listaAlumnos.add(p);
     }
