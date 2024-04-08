@@ -7,23 +7,33 @@ package clases;
 import java.util.TreeSet;
 
 /**
- *
  * @author ProfDiurno
  */
 public class Curso {
 
-    private String nombre;
-    private TreeSet<Persona> listaAlumnos;
+    private final String nombre;
+    private final TreeSet<Persona> listaAlumnos;
 
-    protected String getNombre() {
-        return nombre;
-    }
-
+    /**
+     * Constructor de la clase "Curso" que recibe nombre del curso, inicializando la lista y almacenadno ahí los alumnos
+     *
+     * @param nombre Recibe nombre
+     */
     public Curso(String nombre) {
         this.nombre = nombre;
         listaAlumnos = new TreeSet<>();
     }
 
+    protected String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * Método ToString de la clase Curso que devuelve de manera formateada el número de expediente, NOF,
+     * nombre, edad y apellidos del objeto persona, devolviendo recorriendo el mapa
+     *
+     * @return S
+     */
     @Override
     public String toString() {
         String s = "--------------------" + nombre + "-----------------\n";
@@ -37,8 +47,9 @@ public class Curso {
 
     /**
      * Añade un alumno a la lista
-     * @author Aitor
+     *
      * @param p Recibe objeto persona
+     * @author Aitor
      */
     public void aniadirAlumno(Persona p) {
         listaAlumnos.add(p);
