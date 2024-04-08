@@ -23,7 +23,41 @@ class CursoTest {
         assertEquals(p.getNombre().trim(), partes[1].trim());
         assertEquals(p.getEdad() + "", partes[4].trim());
     }
-    //todo: implementar test para cuando metes un alumno vacio
-    //todo: implementar test para cuando metes un alumno solo con nif
 
+    //todo: implementar test para cuando metes un alumno vacio
+    @Test
+    void aniadirAlumnoTest2() {
+        Persona p2 = new Persona();
+        Curso c2 = new Curso("Prueba2");
+        c2.aniadirAlumno(p2);
+        String resultado = c2.toString();
+        resultado = resultado.replace("--------------------Prueba2-----------------\n" +
+                "NumExp\tNIF\t\tNombre\tedad\tApellidos\n"
+                + "-------------------------------------------------\n", "");
+        String[] partes = resultado.split("\t");
+        for (String parte : partes) {
+            System.out.println(parte);
+        }
+        assertEquals(p2.getNif().toString().trim(), partes[0].trim());
+        assertEquals(p2.getNombre().trim(), partes[1].trim());
+
+    }
+
+    //todo: implementar test para cuando metes un alumno solo con nif
+    @Test
+    void aniadirAlumnoTest3() {
+        Persona p3 = new Persona(1234);
+        Curso c3 = new Curso("Prueba3");
+        c3.aniadirAlumno(p3);
+        String resultado = c3.toString();
+        resultado = resultado.replace("--------------------Prueba3-----------------\n" +
+                "NumExp\tNIF\t\tNombre\tedad\tApellidos\n"
+                + "-------------------------------------------------\n", "");
+        String[] partes = resultado.split("\t");
+        for (String parte : partes) {
+            System.out.println(parte);
+        }
+        assertEquals(p3.getNif().toString().trim(), partes[0].trim());
+        assertEquals(p3.getNombre().trim(), partes[1].trim());
+    }
 }
