@@ -33,6 +33,7 @@ public class Curso {
      * nombre, edad y apellidos del objeto persona, devolviendo recorriendo el mapa
      *
      * @return S
+     * @author Aitor
      */
     @Override
     public String toString() {
