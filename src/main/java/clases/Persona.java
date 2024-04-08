@@ -15,6 +15,9 @@ public class Persona implements Comparable<Persona> {
     private char genero;
     private LocalDate nacimiento;
 
+    /**
+     * Constructor vacío de la clase Persona
+     */
     public Persona() {
         nif = new Nif();
         nombre = "";
@@ -27,8 +30,19 @@ public class Persona implements Comparable<Persona> {
         this.nif = new Nif(nif);
     }
 
+    /**
+     * Constructor de la clase persona que recibe el nombre, NIF, género,
+     * día, mes y año de nacimiento de la persona
+     *
+     * @param nif    Recibe NIF
+     * @param nombre Recibe nombre
+     * @param genero Recibe género
+     * @param dia    Recibe día de nacimiento
+     * @param mes    Recibe mes de nacimiento
+     * @param ano    Recibe año de nacimiento
+     */
     public Persona(int nif, String nombre, char genero,
-            int dia, int mes, int ano) {
+                   int dia, int mes, int ano) {
         this.nif = new Nif(nif);
         this.nombre = nombre;
         this.genero = genero;
@@ -36,6 +50,11 @@ public class Persona implements Comparable<Persona> {
                 = LocalDate.of(ano, mes, dia);
     }
 
+    /**
+     * Método que recibe NIF
+     *
+     * @return Nif
+     */
     public Nif getNif() {
         return nif;
     }
@@ -76,6 +95,11 @@ public class Persona implements Comparable<Persona> {
     }
 
     @Override
+    /**
+     * Método To String que da formato al objeto persona, mostrando de manera tabulada
+     * el nombre, el NIF y la edad de la persona
+     * @author Aitor
+     */
     public String toString() {
         if (nombre.split(" ").length > 1) {
             return nif + "\t" + nombre.split(" ")[0]
@@ -85,6 +109,13 @@ public class Persona implements Comparable<Persona> {
         }
     }
 
+    /**
+     * Método que recibe un objeto persona y comprueba si es igual a null o no
+     *
+     * @param a Recibe un objeto de tipo persona
+     * @return False si el objeto es igual o null o una cadena si es True
+     * @author Aitor
+     */
     public boolean equals(Persona a) {
         if (a == null) {
             return false;
@@ -93,6 +124,12 @@ public class Persona implements Comparable<Persona> {
     }
 
     @Override
+    /**
+     * Método que compara si dos elementos NIF son iguales o no, necesario para
+     * comprobar si un objeto alumno es igual a otro
+     * @author Aitor
+     * @param obj Recibe un objeto NIF
+     */
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -108,6 +145,12 @@ public class Persona implements Comparable<Persona> {
         return Objects.equals(this.nif, other.nif);
     }
 
+    /**
+     * Compara dos objetos persona
+     *
+     * @param o the object to be compared.
+     * @return Devuelve todos los objetos "Persona" de manera ordenada
+     */
     @Override
     public int compareTo(Persona o) {
         return this.nif.toString().compareTo(o.nif.toString());
