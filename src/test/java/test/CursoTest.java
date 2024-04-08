@@ -24,7 +24,6 @@ class CursoTest {
         assertEquals(p.getEdad() + "", partes[4].trim());
     }
 
-    //todo: implementar test para cuando metes un alumno vacio
     @Test
     void aniadirAlumnoTest2() {
         Persona p2 = new Persona();
@@ -43,7 +42,6 @@ class CursoTest {
 
     }
 
-    //todo: implementar test para cuando metes un alumno solo con nif
     @Test
     void aniadirAlumnoTest3() {
         Persona p3 = new Persona(1234);
