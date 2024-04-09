@@ -10,10 +10,7 @@ package clases;
 public class Nif {
 
     //CONSTANTE: no accesible - compartido por todo - no modificable
-    
-    /**
-     * Letras asociadas a los números del NIF según el algoritmo de cálculo.
-     */
+
     private static final char[] LETRAS
             = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D',
             'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L',
@@ -41,13 +38,7 @@ public class Nif {
         this.letra = calcularLetra(numero);
     }
 
-    /**
-     * Calcula la letra asociada a un número de NIF utilizando
-     * un algoritmo específico.
-     *
-     * @param numero El número del NIF para el cual se calculará la letra.
-     * @return La letra asociada al número de NIF.
-     */
+
     private static char calcularLetra(int numero) {
         return LETRAS[numero % 23];
     }
